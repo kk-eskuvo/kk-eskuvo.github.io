@@ -45,7 +45,7 @@ nav {
   color: #fff;
 }
 a{color:inherit}
-.hero{min-height:720px;position:relative;display:flex;flex-direction:column;overflow:hidden;background:var(--paper)}
+.hero{min-height:620px;position:relative;display:flex;flex-direction:column;overflow:hidden;background:var(--paper)}
 .floral{pointer-events:none;background-repeat:no-repeat;background-size:100% auto}
 .floral-top{position:fixed;inset:0 0 auto;height:230px;background-image:url("images/virag-felso_uj.png");background-position:top center;opacity:.95;z-index: 1000;pointer-events: none;}
 .hero-content{position:relative;z-index:1;text-align:center;margin: auto;width:min(850px,90%);padding:0px 0 10px}
@@ -166,10 +166,11 @@ footer p{font-family:"Cormorant Garamond",serif;font-size:25px;margin:0}
 footer span{font-size:9px;letter-spacing:.2em;color:#8f846f}
 #program .eyebrow {font-size: 18px;letter-spacing: .22em;font-weight: 600;color: #9a8052;margin: 0 0 20px;text-align: center;}
 @media(max-width:650px){
- .hero{min-height:670px}.floral-top{height:135px;background-size:auto 135px;background-position:top center}
- .hero-content{padding:0px 0 55px}.names{font-size:clamp(48px,13vw,72px)}
+ .hero{min-height:570px}.floral-top{height:135px;background-size:auto 135px;background-position:top center}
+ .hero-content{padding-top:25px}.names{font-size:clamp(48px,13vw,72px)}
  .hero-date{font-size:25px}.hero-subtitle{font-size:19px}
  .section{padding:20px 0}.welcome{padding-top:5px}
+ .rsvp-section h3{font-size:22px}
  .venue-card h2,.section h2,.countdown-inner h2{font-size:25px}
  .countdown{gap:0}.countdown div{padding:0 3px}.countdown strong{font-size:42px}.countdown span{font-size:7px;letter-spacing:.08em}
  .timeline:before{left:76px}.timeline-item{grid-template-columns:62px 28px 1fr;min-height:61px}
@@ -178,12 +179,30 @@ footer span{font-size:9px;letter-spacing:.2em;color:#8f846f}
  .contact-grid{gap:40px;flex-direction:column}.contact-grid strong{font-size:22px}
  .floral-corner{width:130px;height:130px;background-size:auto 130px}
  .ajandek {width: 90%;max-width: 90%;margin: 80px auto;padding: 0 0px;}
- nav {padding-right: 25%}
+ nav {display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-right: 0;
+    padding-top: 50px;
+  }
+.lang-switcher .outline-button {
+  margin-top: 0;
+  padding: 8px 18px;             /* Kényelmes, jól látható gombméret */
+  border: 1px solid var(--gold);  /* Biztosan megjelenik az arany keret */
+  background: transparent
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 9px;
+  letter-spacing: 0.17em;
+  cursor: pointer;
+  transition: 0.2s;
+}
 .rsvp-form iframe {height: 800px;}
 }
 
 main > .rsvp-section {
-  padding-top: 20px !important;
+  padding-top: 10px !important;
 }
 #reszletek .venue-card {
   margin-top: 55px;
