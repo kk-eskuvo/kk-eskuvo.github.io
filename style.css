@@ -11,15 +11,44 @@ body{margin:0;padding-top:80px;background:var(--paper);color:var(--ink);font-fam
   pointer-events: none; /* Nagyon fontos: így a gombokra ugyanúgy rá lehet kattintani */
   z-index: 50; /* A szöveg felett, de a virágok (z-index: 100) alatt lebegjenek */
 }
+/* Pozicionálás a virágos dísz alá, a nevek vonalába */
+nav {
+  position: relative;
+  z-index: 100;             /* Biztosítja, hogy a virágos kép fölött legyen */
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 130px;       /* Lejjebb tolja a virágok alá (ezt finomíthatod) */
+  padding-right: 27%;       /* Beljebb hozza a jobb szélről a nevek felé */
+}
+
+.lang-switcher {
+  display: flex;
+  gap: 12px;
+}
+
+/* Gombok láthatóságának és méretének javítása */
+.lang-switcher .outline-button {
+  margin-top: 0;
+  padding: 10px 22px;             /* Kényelmes, jól látható gombméret */
+  border: 1px solid var(--gold);  /* Biztosan megjelenik az arany keret */
+  background: transparent
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 13px;
+  letter-spacing: 0.17em;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.lang-switcher .outline-button:hover {
+  background-color: var(--gold);
+  color: #fff;
+}
 a{color:inherit}
 .hero{min-height:720px;position:relative;display:flex;flex-direction:column;overflow:hidden;background:var(--paper)}
 .floral{pointer-events:none;background-repeat:no-repeat;background-size:100% auto}
 .floral-top{position:fixed;inset:0 0 auto;height:210px;background-image:url("images/virag-felso_uj.png");background-position:top center;opacity:.95;z-index: 1000;pointer-events: none}
-.nav{position:relative;z-index:2;width:min(1120px,90%);margin:0 auto;padding:28px 0;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(200,166,106,.25)}
-.nav-brand{font-family:"Cormorant Garamond",serif;font-size:23px;letter-spacing:.16em;text-decoration:none}
-.nav-brand span{color:var(--gold);font-style:italic}
-.nav-links{display:flex;gap:28px}.nav-links a{font-size:10px;letter-spacing:.13em;text-decoration:none;text-transform:uppercase;color:var(--muted)}
-.hero-content{position:relative;z-index:1;text-align:center;margin:auto;width:min(850px,90%);padding:10px 0 10px}
+.hero-content{position:relative;z-index:1;text-align:center;margin: auto;width:min(850px,90%);padding:0px 0 10px}
 .eyebrow{font-size:18px;letter-spacing:.22em;font-weight:600;color:#9a8052;margin:0 0 20px}
 .names{display:flex;flex-direction:column;align-items:center;font-family:"Cormorant Garamond",serif;font-size:clamp(48px,7vw,75px);font-weight:500;line-height:.85;letter-spacing:.045em;text-transform:uppercase}
 .names .ampersand{font-size:.75em;font-weight:400;color:var(--gold);font-style:italic;line-height:1.05}
@@ -68,7 +97,40 @@ a{color:inherit}
 .rsvp-section h2{font-size:43px}
 .rsvp-section h3{font-size:25px}
 .rsvp-section .section>p:not(.eyebrow){font-family:"Cormorant Garamond",serif;font-size:21px;color:var(--muted);line-height:1.45}
-.form-coming{display:inline-block;margin-top:15px;border:1px solid #d9c9a9;padding:12px 20px;color:#8e7449;font-size:10px;letter-spacing:.08em}
+.form-coming {
+  display: inline-block;
+  margin-top: 20px;
+  border: 1px solid #d9c9a9;
+  padding: 14px 26px;
+  color: black;
+  background: transparent;
+  font-family: inherit;
+  font-size: 13px;
+  letter-spacing: .17em;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+.form-coming:hover {
+  background-color: var(--gold);
+  color: white;
+}
+
+.rsvp-form {
+  width: 100%;
+  max-width: 700px;
+  margin: 30px auto 0;
+}
+
+.rsvp-form iframe {
+  display: block;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+}
+
+.rsvp-form[hidden] {
+  display: none;
+}
 .ajandek {
   width: 90%;
   max-width: 90%;
@@ -85,7 +147,8 @@ a{color:inherit}
 .closing{font-family:"Cormorant Garamond",serif;font-size:22px;color:var(--muted)}
 .signature{font-family:"Cormorant Garamond",serif;font-size:36px;letter-spacing:.06em;margin-top:15px}
 .signature i{color:var(--gold);font-size:1.2em}
-footer{position:relative;overflow:visible;text-align:center;padding:85px 20px 35px}
+.kozoskep {width: 100%;max-width: 600px;height: auto; margin-top:80px}
+footer{position:relative;overflow:visible;text-align:center;padding:45px 20px 35px}
 .floral-footer {
   position: absolute;
   inset: auto 0 0;
@@ -97,8 +160,7 @@ footer{position:relative;overflow:visible;text-align:center;padding:85px 20px 35
   background-repeat: no-repeat;
   opacity: .95;
   z-index: 10;
-  pointer-events: none;
-}
+  pointer-events: none;}
 footer p,footer span{position:relative;z-index:1}
 footer p{font-family:"Cormorant Garamond",serif;font-size:25px;margin:0}
 footer span{font-size:9px;letter-spacing:.2em;color:#8f846f}
@@ -115,12 +177,8 @@ footer span{font-size:9px;letter-spacing:.2em;color:#8f846f}
  .section-heading h2,.rsvp-section h2,.contact-section h2{font-size:36px}
  .contact-grid{gap:40px;flex-direction:column}.contact-grid strong{font-size:22px}
  .floral-corner{width:130px;height:130px;background-size:auto 130px}
-  .ajandek {width: 90%;max-width: 90%;margin: 80px auto;padding: 0 0px;}
-}
-header#top.hero {
-  min-height: 200 !important;
-  height: auto !important;
-  padding-bottom: 0px !important;
+ .ajandek {width: 90%;max-width: 90%;margin: 80px auto;padding: 0 0px;}
+ nav {padding-right: 25%}
 }
 
 main > .rsvp-section {

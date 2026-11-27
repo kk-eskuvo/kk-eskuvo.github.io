@@ -5,13 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#fffefa">
   <meta name="description" content="Krisztina és Krisztián esküvője – 2027. május 22.">
-  <title>Krisztina & Krisztián | 2027. május 22.</title>
+  <title data-i18n="titlesz"></title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<nav>
+  <div class="lang-switcher">
+    <button class="outline-button" onclick="setLanguage('hu')">MAGYAR</button>
+    <button class="outline-button" onclick="setLanguage('en')">ENGLISH</button>
+  </div>
+</nav>
   <canvas id="arany-por"></canvas>
   <header class="hero" id="top">
     <div class="floral floral-top" aria-hidden="true"></div>
@@ -22,73 +28,91 @@
         <span>Krisztián</span>
       </div>
       <div class="gold-rule"><span></span><b>✧</b><span></span></div>
-      <p class="hero-date">2027. május 22.</p>
-      <a class="outline-button" href="#reszletek">A NAGY NAP RÉSZLETEI</a>
+      <p class="hero-date" data-i18n="datum" ></p>
+      <a class="outline-button" href="#reszletek" data-i18n="nagy_nap_gomb"></a>
     </div>
   </header>
 
   <main>
     <section class="rsvp-section section" id="rsvp">
          <div class="venue-card">
-        <p class="eyebrow">VISSZAJELZÉS</p>
-        <h3>Részvételi szándékotokat, szállásigényeteket és esetleges ételintoleranciátokat kérjük, 2027. február 20-ig jelezzétek.</h3>
-        <div class="form-coming">A visszajelző űrlap hamarosan elérhető lesz.</div>
-      </div>
-    </section>
+    <p class="eyebrow" data-i18n="visszajel"></p>
+    <h3 data-i18n="rszv"></h3>
+
+     <button type="button" class="form-coming" id="show-form" data-i18n="kitoltom"></button>
+
+    <div class="rsvp-form" id="rsvp-form" hidden>
+      <iframe
+        data-src="https://docs.google.com/forms/d/e/1FAIpQLScklEEX3fEbClAxMSjJxAM9e0_Mxr-yTvjiXNKxj_mviiNCAA/viewform?embedded=true"
+        width="100%"
+        height="600"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0">
+        Betöltés…
+      </iframe>
+    </div>
+  </div>
+</section>
     
     <section class="welcome section" id="reszletek">
 <div class="gold-rule"><span></span><b>✧</b><span></span></div>
-      <h2>KEDVES CSALÁDUNK ÉS BARÁTAINK!</h2>
-      <h1>Sok szeretettel meghívunk Benneteket esküvőnkre, hogy azok előtt mondhassuk ki a boldogító igent, akik a legfontosabbak számunkra.</h1>
+      <h2 data-i18n="kedves"></h2>
+      <h1 data-i18n="soksz"></h1>
       <div class="venue-card">
-        <p class="eyebrow">IDŐPONT ÉS HELYSZÍN</p>
-        <h2>2027. május 22.</h2>
+        <p class="eyebrow" data-i18n="idohelysz"></p>
+        <h2 data-i18n="datum"></h2>
         <h2>Magyar Golf Club</h2>
         <h2>2024 Kisoroszi, Golf út 1.</h2>
-        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Magyar+Golf+Club+2024+Kisoroszi+Golf+%C3%BAt+1" target="_blank" rel="noopener">HELYSZÍN MEGNYITÁSA A TÉRKÉPEN ↗</a>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Magyar+Golf+Club+2024+Kisoroszi+Golf+%C3%BAt+1" target="_blank" rel="noopener" data-i18n="map"></a>
       </div>
-      <p class="venue-note">Az egyházi szertartás a klubháztól 5 perc sétára található Cseres-tó partján lesz, a lagzi pedig a klubház másik oldalán lévő sátorban.</p>
+      <p class="venue-note" data-i18n="leir"></p>
     </section>
 
    <section class="program-section section" id="program">
 <div class="gold-rule"><span></span><b>✧</b><span></span></div>
   <div class="section-heading" style="text-align: center;">
-    <p class="eyebrow">A NAP MENETE</p>
+    <p class="eyebrow" data-i18n="menet" ></p>
   </div>
-  <div class="timeline">
-        <div class="timeline-item"><time>14:30</time><span class="timeline-dot"></span><div><h3>Szobák elfoglalása</h3></div></div>
-        <div class="timeline-item"><time>15:30</time><span class="timeline-dot"></span><div><h3>Vendégvárás</h3></div></div>
-        <div class="timeline-item"><time>16:00</time><span class="timeline-dot"></span><div><h3>Egyházi szertartás</h3></div></div>
-        <div class="timeline-item"><time>17:00</time><span class="timeline-dot"></span><div><h3>Gratulációk, fotózkodás</h3></div></div>
-        <div class="timeline-item"><time>19:00</time><span class="timeline-dot"></span><div><h3>Vacsora</h3></div></div>
-        <div class="timeline-item"><time>22:30</time><span class="timeline-dot"></span><div><h3>Torta</h3></div></div>
-        <div class="timeline-item"><time>00:00</time><span class="timeline-dot"></span><div><h3>Éjféli büfé</h3></div></div>
-        <div class="timeline-item"><time>09:30</time><span class="timeline-dot"></span><div><h3>Reggeli</h3></div></div>
-      </div>
+<div class="timeline">
+  <div class="timeline-item"><time>14:30</time><span class="timeline-dot"></span><div><h3 data-i18n="tl_1"></h3></div></div>
+  <div class="timeline-item"><time>15:30</time><span class="timeline-dot"></span><div><h3 data-i18n="tl_2"></h3></div></div>
+  <div class="timeline-item"><time>16:00</time><span class="timeline-dot"></span><div><h3 data-i18n="tl_3"></h3></div></div>
+  <div class="timeline-item"><time>17:00</time><span class="timeline-dot"></span><div><h3 data-i18n="tl_4"></h3></div></div>
+  <div class="timeline-item"><time>19:00</time><span class="timeline-dot"></span><div><h3 data-i18n="tl_5"></h3></div></div>
+  <div class="timeline-item"><time>22:30</time><span class="timeline-dot"></span><div><h3 data-i18n="tl_6"></h3></div></div>
+  <div class="timeline-item"><time>00:00</time><span class="timeline-dot"></span><div><h3 data-i18n="tl_7"></h3></div></div>
+  <div class="timeline-item"><time>09:30</time><span class="timeline-dot"></span><div><h3 data-i18n="tl_8"></h3></div></div>
+</div>
     </section>
 
 <section class="countdown-section section" id="countdown">
   <div class="venue-card">
-    <p class="eyebrow">MÁR CSAK ENNYI VAN HÁTRA A NAGY NAPIG:</p>
-    <div class="countdown">
-      <div><strong id="days">—</strong><span>nap</span></div>
-      <div><strong id="hours">—</strong><span>óra</span></div>
-      <div><strong id="minutes">—</strong><span>perc</span></div>
-      <div><strong id="seconds">—</strong><span>másodperc</span></div>
-    </div>
+    <p class="eyebrow" data-i18n="countercim"></p>
+<div class="countdown">
+  <div><strong id="days">—</strong><span data-i18n="cd_days"></span></div>
+  <div><strong id="hours">—</strong><span data-i18n="cd_hours">óra</span></div>
+  <div><strong id="minutes">—</strong><span data-i18n="cd_minutes">perc</span></div>
+  <div><strong id="seconds">—</strong><span data-i18n="cd_seconds">másodperc</span></div>
+</div>
   </div>
 </section>
 
 <section class="ajandek section">
-     <h1>Tárgyi dologra nincs szükségünk, hisz megvan már mindenünk, de ha gondolsz ránk, egy kis borítékot hálásan köszönünk.</h1>
+     <h1 data-i18n="aji">Tárgyi dologra nincs szükségünk, hisz megvan már mindenünk, de ha gondolsz ránk, egy kis borítékot hálásan köszönünk.</h1>
   </section>
 
     <section class="contact-section section" id="kapcsolat">
+<div class="gold-rule"><span></span><b>✧</b><span></span></div>
+  <div class="eyebrow" style="text-align: center;">
+    <p class="eyebrow" data-i18n="elerhet" ></p>
+  </div>
       <div class="contact-grid">
-        <a href="tel:+36306246925"><span>Menyasszony</span><strong>+36 30 624 6925</strong></a>
-        <a href="tel:+36308117155"><span>Vőlegény</span><strong>+36 30 811 7155</strong></a>
+        <a href="tel:+36306246925"><span data-i18n="menya"></span><strong>+36 30 624 6925</strong></a>
+        <a href="tel:+36308117155"><span data-i18n="voleg"></span><strong>+36 30 811 7155</strong></a>
       </div>
-      <h1>Mi már nagyon várjuk a közös ünneplést Veletek!</h1>
+      <h1 data-i18n="bucsu"></h1>
+<img src="images/kozos_kep.jpg" alt="Közös kép" class="kozoskep">
     </section>
   </main>
 
