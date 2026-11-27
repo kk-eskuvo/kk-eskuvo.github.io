@@ -178,8 +178,8 @@ footer span{font-size:9px;letter-spacing:.2em;color:#8f846f}
  .contact-grid{gap:40px;flex-direction:column}.contact-grid strong{font-size:22px}
  .floral-corner{width:130px;height:130px;background-size:auto 130px}
  .ajandek {width: 90%;max-width: 90%;margin: 80px auto;padding: 0 0px;}
- nav {padding-right: 25%}
- .rsvp-form iframe {height: 1000px;}
+ nav {padding-right: 20%}
+ .rsvp-form iframe {height: 800px;}
 }
 
 main > .rsvp-section {
