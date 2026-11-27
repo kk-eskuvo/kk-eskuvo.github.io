@@ -121,8 +121,10 @@ showFormButton.addEventListener("click", function () {
 
 const formPosition = rsvpForm.getBoundingClientRect().top + window.scrollY;
 
+const isMobile = window.matchMedia("(max-width: 650px)").matches;
+
 window.scrollTo({
-  top: formPosition -350,
+  top: formPosition - (isMobile ? 100 : 350),
   behavior: "smooth"
 });
 });
